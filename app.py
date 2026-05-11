@@ -33,10 +33,11 @@ def process_pdfs(uploaded_files):
             page_qr.cropbox.upper_right = (qr_coords[2], qr_coords[3])
             writer.add_page(page_qr)
             
-            # 2. Invoice (Bottom Half)
+            # 2. Invoice (Bottom Half) - ROTATED 90 DEGREES ANTICLOCKWISE
             page_inv = reader_inv.pages[i]
             page_inv.cropbox.lower_left = (invoice_coords[0], invoice_coords[1])
             page_inv.cropbox.upper_right = (invoice_coords[2], invoice_coords[3])
+            page_inv.rotate(-90) # Added rotation here!
             writer.add_page(page_inv)
             
     # Save the final combined result to a new in-memory bytes buffer
