@@ -1,6 +1,7 @@
 import streamlit as st
 from pypdf import PdfReader, PdfWriter
 import io
+from datetime import datetime
 
 def process_pdfs(uploaded_files):
     writer = PdfWriter()
@@ -63,11 +64,15 @@ if uploaded_files:
                 
                 st.success(f"Success! Processed {total_pages} original pages across {len(uploaded_files)} file(s) into {total_pages * 2} cropped, alternating pages.")
                 
+                # Generate dynamic filename with current date and time (DDMMYYYYHHMM)
+                timestamp = datetime.now().strftime("%d%m%Y%H%M")
+                dynamic_filename = f"flipkart_labels_ready_{timestamp}.pdf"
+                
                 # Download button
                 st.download_button(
                     label="⬇️ Download Combined Cropped PDF",
                     data=processed_pdf,
-                    file_name="flipkart_labels_ready.pdf",
+                    file_name=dynamic_filename,
                     mime="application/pdf"
                 )
             except Exception as e:
