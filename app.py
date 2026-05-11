@@ -81,6 +81,17 @@ if uploaded_files:
 # --- FOOTER ---
 st.markdown("---")
 st.markdown(
-    "<p style='text-align: center; color: #888888; font-size: 16px; font-weight: bold;'>Developed by Harshit 😎</p>", 
+    """
+    <div style='text-align: center; margin-top: 20px;'>
+        <p style='color: #888888; font-size: 16px; font-weight: bold; margin-bottom: 10px;'>Developed by Harshit 😎</p>
+        <a href='https://www.instagram.com/harshit_._arora' target='_blank' style='display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); border-radius: 50%; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-decoration: none;'>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+        </a>
+    </div>
+    """, 
     unsafe_allow_html=True
 )
