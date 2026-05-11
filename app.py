@@ -15,8 +15,8 @@ def process_pdf(uploaded_file):
     writer = PdfWriter()
     
     # --- TIGHT CROP COORDINATES ---
-    qr_coords = (170, 470, 425, 825)      
-    invoice_coords = (25, 100, 570, 460)   
+    qr_coords = (185, 450, 410, 820)      
+    invoice_coords = (30, 70, 565, 460)   
 
     num_pages = len(reader_qr.pages)
     
